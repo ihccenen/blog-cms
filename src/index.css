@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Tahoma, sans-serif;
+  font-size: 1rem;
+  display: grid;
+  height: 100vh;
+  line-height: 1.4;
+}
+
+a {
+  font-size: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+textarea {
+  resize: none;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.center {
+  text-align: center;
+}
+
+.header {
+  font-size: 1.5rem;
+  padding: 1em;
+}
+
+.error-page {
+  font-size: 1.5rem;
+  justify-content: center;
+  height: 100%;
+}
+
+.main {
+  gap: 2rem;
+  padding: 1em;
+  max-width: 80rem;
+  margin-inline: auto;
+}
+
+.posts-list {
+  margin-top: 3em;
+  padding-inline: 5em;
+}
+
+.post-wrapper {
+  padding: 2em 5em;
+  border: 1px solid;
+  border-radius: 1em;
+  gap: 2em;
+}
+
+.post-text {
+  font-size: 1.4rem;
+  padding: 1em;
+}
+
+.posted-at {
+  text-align: end;
+}
+
+.comments {
+  padding: 2em 5em;
+  gap: 2em;
+}
+
+.comment {
+  gap: 1em;
+  padding: 1em;
+  border: 1px solid;
+  border-radius: 1em;
+}
+
+.comment-form {
+  max-width: 30rem;
+  padding: 1em;
+  border: 1px solid;
+  border-radius: 1em;
+}
+
+.input,
+.textarea {
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 1em 0.5em;
+  border-radius: 1em;
+  border: none;
+  background-color: aquamarine;
+}
+
+.send-btn {
+  padding: 1em;
+  background-color: yellowgreen;
+  border: none;
+  border-radius: 1em;
+}
+
+.send-btn:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.send-btn:disabled:hover {
+  cursor: wait;
+}
