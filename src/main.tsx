@@ -11,6 +11,7 @@ import Post from './components/Post';
 import Login from './routes/Login';
 import './index.css';
 import PrivateRoute from './components/PrivateRoute';
+import NewPost from './routes/NewPost';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,16 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <Post />,
+          },
+        ],
+      },
+      {
+        path: '/new-post',
+        element: <PrivateRoute />,
+        children: [
+          {
+            index: true,
+            element: <NewPost />,
           },
         ],
       },
