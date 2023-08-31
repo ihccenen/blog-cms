@@ -17,6 +17,8 @@ interface IPost {
   _id: string;
   user: { username: string; _id: string };
   createdAt: string;
+  updatedAt: string;
+  published: boolean;
 }
 
 interface IComment {
