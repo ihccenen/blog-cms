@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { UserContextProvider } from './context/userContext';
 import App from './App';
 import ErrorPage from './routes/ErrorPage';
-import './index.css';
 import Posts from './routes/Posts';
 import Post from './components/Post';
+import Login from './routes/Login';
+import './index.css';
+import PrivateRoute from './components/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -17,11 +20,27 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Posts />,
+        element: <PrivateRoute />,
+        children: [
+          {
+            index: true,
+            element: <Posts />,
+          },
+        ],
       },
       {
         path: '/posts/:postId',
-        element: <Post />,
+        element: <PrivateRoute />,
+        children: [
+          {
+            index: true,
+            element: <Post />,
+          },
+        ],
+      },
+      {
+        path: '/login',
+        element: <Login />,
       },
     ],
   },
@@ -31,9 +50,11 @@ const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-      <ReactQueryDevtools />
-    </QueryClientProvider>
+    <UserContextProvider>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+        <ReactQueryDevtools />
+      </QueryClientProvider>
+    </UserContextProvider>
   </React.StrictMode>
 );
