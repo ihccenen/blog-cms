@@ -57,7 +57,7 @@ export default function Login() {
           <input
             className="input"
             ref={passwordRef}
-            type="text"
+            type="password"
             name="password"
             id="password"
             required
