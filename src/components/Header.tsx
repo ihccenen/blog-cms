@@ -12,6 +12,7 @@ export default function Navbar() {
   return (
     <header className="header flex">
       <Link to="/">Home</Link>
+      <Link to="/new-post">New Post</Link>
       {user && (
         <button className="logout-btn" type="button" onClick={handleClick}>
           Logout
