@@ -21,6 +21,11 @@ a:hover {
   text-decoration: underline;
 }
 
+button {
+  border: none;
+  border-radius: 1em;
+}
+
 textarea {
   resize: none;
 }
@@ -36,6 +41,8 @@ textarea {
 }
 
 .header {
+  flex-direction: row;
+  justify-content: space-between;
   font-size: 1.5rem;
   padding: 1em;
 }
@@ -65,9 +72,28 @@ textarea {
   gap: 2em;
 }
 
+.published {
+  border: 1px solid rgb(47, 255, 151);
+}
+
+.unpublished {
+  border: 1px solid tomato;
+}
+
+.post-top-wrapper {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .post-text {
   font-size: 1.4rem;
   padding: 1em;
+}
+
+.post-bottom-wrapper {
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .posted-at {
@@ -103,18 +129,70 @@ textarea {
   background-color: aquamarine;
 }
 
-.send-btn {
-  padding: 1em;
+.send-btn,
+.login-btn,
+.submit-post-btn,
+.publish-btn {
   background-color: yellowgreen;
-  border: none;
-  border-radius: 1em;
 }
 
-.send-btn:hover {
+.logout-btn,
+.delete-post-btn,
+.delete-comment-btn {
+  font-size: 1rem;
+  background-color: tomato;
+  padding: 0.5em;
+}
+
+.unpublish-btn {
+  background-color: bisque;
+}
+
+.send-btn,
+.login-btn,
+.submit-post-btn,
+.published-status-btn {
+  font-size: 1.2rem;
+  padding: 1em;
+}
+
+.send-btn:hover,
+.login-btn:hover,
+.logout-btn:hover,
+.submit-post-btn:hover,
+.published-status-btn:hover,
+.delete-comment-btn:hover,
+.delete-post-btn:hover {
   cursor: pointer;
   opacity: 0.9;
 }
 
-.send-btn:disabled:hover {
+.send-btn:disabled:hover,
+.login-btn:disabled:hover,
+.submit-post-btn:disabled:hover,
+.logout-btn:disabled:hover,
+.published-status-btn:disabled:hover,
+.delete-comment-btn:disabled:hover,
+.delete-post-btn:disabled:hover {
   cursor: wait;
+}
+
+.delete-comment-btn {
+  align-self: center;
+}
+
+.login-form {
+  padding: 5em;
+}
+
+.new-post-form {
+  gap: 3em;
+}
+
+.fieldset {
+  border: none;
+}
+
+.fieldset-label {
+  flex-direction: row;
 }
