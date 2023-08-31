@@ -36,3 +36,25 @@ export async function createComment({
 
   return result;
 }
+
+export async function deletePostComment({
+  postId,
+  commentId,
+}: {
+  postId: string;
+  commentId: string;
+}) {
+  const comment = await fetch(
+    `${import.meta.env.VITE_API_URL}/posts/${postId}/comments/${commentId}`,
+    {
+      method: 'DELETE',
+      credentials: 'include',
+    }
+  );
+
+  const result = await comment.json();
+
+  if (!comment.ok) throw new Error(result.message);
+
+  return result;
+}
