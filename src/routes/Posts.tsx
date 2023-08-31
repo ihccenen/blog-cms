@@ -26,9 +26,11 @@ export default function Posts() {
 
   return (
     <main className="posts-list main flex">
-      {data.map((post: IPost) => (
-        <PostPreview key={post._id} post={post} />
-      ))}
+      {data.length < 1 ? (
+        <h1>No posts</h1>
+      ) : (
+        data.map((post: IPost) => <PostPreview key={post._id} post={post} />)
+      )}
     </main>
   );
 }
